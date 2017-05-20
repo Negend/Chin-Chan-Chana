@@ -103,11 +103,11 @@ function drawWin (ob,obj,objj,i){
 	status = document.getElementsByClassName('status')
 	if(i < 3){		
 		winner(ob,obj,objj,playScore)
-		alert('player')
+		
 
 	}else{
 		status[0].innerHTML = obj + ' and ' + objj+ ' DRAW'	
-		alert('draw')
+		
 	}
 }
 
@@ -126,7 +126,7 @@ function grandWin(champ){
 	if (compScore.length === 5 || playScore.length === 5){
 		status[0].innerHTML = ('Game over '+champ+' wins')
 		game = 1
-		alert('game')
+		
 		document.getElementById('moves').style.backgroundColor = 'red'
 	}
 }

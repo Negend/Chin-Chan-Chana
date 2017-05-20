@@ -1,0 +1,50 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background: black;
+  height: 100%;
+  color: #19ec99;
+}
+
+section, div {
+  height: 200px;
+}
+
+div {
+  display: inline-block;
+  float: left;
+  width: 33.33%;
+  border: 4px;
+  border-radius: 100px;
+}
+
+.reset{
+  font-size:20px;
+}
+
+#scoreboard p {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  line-height: 200px;
+  text-align: center;
+}
+
+#messages p {
+  line-height: 200px;
+  text-align: center;
+}
+
+#moves div {
+  text-align: center;
+  line-height: 200px;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}

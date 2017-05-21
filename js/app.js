@@ -10,20 +10,20 @@ var game = 0
 var hit = 0
 var status = document.getElementsByClassName('status')
 var names = ['Jasmine','Gordon','Amara','Magdaline','Fatherbanj','Gingar','Caremine','Swift Knight','Rose','Pluto','Chis Beybé','Florence','Nneji','Saturn','Negend']
-var you = prompt('Your name or game tag','TheRockcutter')
+var you; 
     	
 // The javascript needs to load onto the browser
 
-
-
-	register()
-	play();
-    start = document.getElementsByClassName('reset')
-    start[0].addEventListener('click',function(){
-    	restart()
-    })
-    changeOpponent()
-
+	setTimeout(function(){
+		nameChange()
+		register()
+		play();
+	    start = document.getElementsByClassName('reset')
+	    start[0].addEventListener('click',function(){
+	    	restart()
+	    })
+	    changeOpponent()
+	},4000)
 
 
 
@@ -193,6 +193,14 @@ function register(){
 		youName.innerHTML = you + ': <span id="player"></span>'
 
 }
+
+
+
+function nameChange(){
+	you = prompt('Your name or game tag','TheRockcutter')
+
+}
+
 
 
 

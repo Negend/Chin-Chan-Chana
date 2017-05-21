@@ -129,10 +129,10 @@ function winner(ob,obj,objj,objjj,obk){
 
 function grandWin(champ){
 	if (compScore.length === 5 || playScore.length === 5){
-		status[0].innerHTML = ('Game over '+champ+' wins')
+		status[0].innerHTML = ('Game over '+champ+' won!')
 		game = 1
 		
-		document.getElementById('moves').style.backgroundColor = 'red'
+		document.getElementById('moves').style.backgroundColor = 'green'
 	}
 }
 function restart(){
@@ -186,18 +186,34 @@ function changeOpponent(){
 
 function register(){
 	if (you){
+		var youName = document.getElementById('playerScore')
+			youName.innerHTML = you + ': <span id="player"></span>'
 	}else{
 		you = 'You'
 	}
-	var youName = document.getElementById('playerScore')
-		youName.innerHTML = you + ': <span id="player"></span>'
+	
 
 }
 
 
 
 function nameChange(){
-	you = prompt('Your name or game tag','TheRockcutter')
+	var myForm = document.getElementById('myForm')
+	myForm.addEventListener("submit",function(event){
+		event.preventDefault();
+		var inputBox =document.getElementById("youName");
+		
+		if (inputBox.value && inputBox.value != you){
+			console.log(inputBox.value)
+			you = inputBox.value
+			restart()
+			register()
+		}
+	
+
+
+	})
+
 
 }
 

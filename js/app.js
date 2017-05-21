@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     console.log('working');
-
-
+var opp = 'computer';
+var x;
 var move = document.getElementsByClassName('fa')
 var hands = ['rock','paper','cut']
 var playScore = [];
@@ -9,17 +9,20 @@ var compScore = [];
 var game = 0
 var hit = 0
 var status = document.getElementsByClassName('status')
+var names = ['Jasmine','Gordon','Amara','Magdaline','Fatherbanj','Gingar','Caremine','Swift Knight','Rose','Pluto','Chis Beybé','Florence','Nneji','Saturn','Negend']
+var you = prompt('Your name or game tag','TheRockcutter')
+    	
 // The javascript needs to load onto the browser
 
 
 
-
-
-    play();
+	register()
+	play();
     start = document.getElementsByClassName('reset')
     start[0].addEventListener('click',function(){
     	restart()
     })
+    changeOpponent()
 
 
 
@@ -32,11 +35,13 @@ function play () {
 		move[i].addEventListener('click',function(){
 			if( game === 0){	
 				clear()
+
 				this.style.background = 'beige'
 				y = this.getAttribute('value')
 				playerHand = hands[y]
 				compTurn()
 				CheckWinner()
+				
 				
 			}
 			// console.log(ComputerHand)
@@ -51,18 +56,18 @@ function play () {
 
 function compTurn(){
 	// move.forEach(addEventListener('click',function))
-	randomizer()
+	randomizer(hands.length)
+	computerHand  = hands[x] 
+
+	setTimeout(function(){ move[x].style.background = 'linear-gradient(beige, red, beige)'},1500)
 }
 
 
 
 
 
-function randomizer(){
-	var x = Math.floor(Math.random()*3)
-	computerHand  = hands[x] 
-
-	setTimeout(function(){ move[x].style.background = 'linear-gradient(beige, red, beige)'},1500)
+function randomizer(r){
+	x = Math.floor(Math.random()*r)
 }
 
 
@@ -84,13 +89,13 @@ function CheckWinner(){
 
 		if(a.join() === combs[i].join()){
 			drawWin('player',playerHand,computerHand,i)
-			grandWin('player')
+			grandWin(you)
 			 hit = 20			
 		}					
 	}
 	if (hit != 20){
-		winner('computer',computerHand,playerHand,compScore,)
-		grandWin('computer')
+		winner('computer',computerHand,playerHand,compScore,opp)
+		grandWin(opp)
 	}
 
 }
@@ -102,7 +107,7 @@ function CheckWinner(){
 function drawWin (ob,obj,objj,i){
 	status = document.getElementsByClassName('status')
 	if(i < 3){		
-		winner(ob,obj,objj,playScore)
+		winner(ob,obj,objj,playScore,you)
 		
 
 	}else{
@@ -114,8 +119,8 @@ function drawWin (ob,obj,objj,i){
 
 
 
-function winner(ob,obj,objj,objjj){
-	status[0].innerHTML = ob+' Win! '+obj+' beats '+objj
+function winner(ob,obj,objj,objjj,obk){
+	status[0].innerHTML = obk+' Won! '+obj+' beats '+objj
 	objjj.push('1')
 	score(ob,objjj)	
 }
@@ -159,6 +164,35 @@ function score(scorer, score){
 
 
 
+
+function opponent(){
+
+	var names = ['Jasmine','Gordon','Amara','Magdaline','Fatherbanj','Gingar','Caremine','Swift Knight','Rose','Pluto','Chis Beybé','Florence','Nneji','Saturn','Negend']
+	randomizer(names.length)
+	 opp = names[x]
+	 console.log(opp)
+}			
+
+function changeOpponent(){
+	document.getElementById('match').addEventListener('click',function(){
+		opponent()
+		var oppName = document.getElementById('computerScore')
+		oppName.innerHTML = opp + ': <span id="computer"></span>'
+		restart()
+	})
+	
+}
+
+
+function register(){
+	if (you){
+	}else{
+		you = 'You'
+	}
+	var youName = document.getElementById('playerScore')
+		youName.innerHTML = you + ': <span id="player"></span>'
+
+}
 
 
 

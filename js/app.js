@@ -14,16 +14,13 @@ var you;
     	
 // The javascript needs to load onto the browser
 
-	setTimeout(function(){
-		nameChange()
-		register()
-		play();
-	    start = document.getElementsByClassName('reset')
-	    start[0].addEventListener('click',function(){
-	    	restart()
-	    })
-	    changeOpponent()
-	},4000)
+	
+nameChange()
+register()
+play()
+reset()
+changeOpponent()
+	
 
 
 
@@ -51,7 +48,12 @@ function play () {
 	
 }
 
-
+function reset(){
+	start = document.getElementsByClassName('reset')
+	start[0].addEventListener('click',function(){
+		restart()
+	})
+} 
 
 
 function compTurn(){

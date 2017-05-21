@@ -11,9 +11,20 @@
 </head>
 <body>
 	<h1>Paper Cut Rock</h1>
+	<nav id="options">
+	  	<input type="button" name="Reset" value="Reset" class="reset">
+		<input type="button" name="find" value="Find Opponents online" id="match">
+		<form action="" method="get" id="myForm">
+
+			<label>Your Name:</label>
+			<input type="text" name="youName" id="youName">
+
+			<input type="submit" value="Change">
+	 	</form>
+ 	</nav>
 	<section id="scoreboard">
-		<p id="playerScore">You: <span id="player"></span></p>
-		<p id="computerScore">Computer: <span id="computer"></span></p>
+		<p id="playerScore">You: <span id="player">0</span></p>
+		<p id="computerScore">Computer: <span id="computer">0</span></p>
 	</section>
 	<section id="moves">
 		<div class="fa fa-hand-rock-o fa-5x" id="rock" value="0"></div>
@@ -21,16 +32,7 @@
 		<div class="fa fa-hand-scissors-o fa-5x" id="scissors" value="2"></div>
 	</section>
 	<section id="messages">
-		<p class = "status">CLICK A HAND TO CHOOSE. First to 5</p>
-		<input type="button" name="Reset" value="Reset" class ="reset">
-		<input type="button" name="find" value="Find Opponents online" id="match">
-		<form action="" method="get" id="myForm">
-
-		    <label>Your Name:</label>
-		    <input type="text" name="youName" id="youName">
-
-		    <input type="submit" value="Change">
-	  	</form>
+		<p class = "status">CLICK A HAND TO CHOOSE. First to 5</p>			
 	</section>
 </body>
 </html>

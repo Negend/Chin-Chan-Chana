@@ -1,6 +1,7 @@
 body {
   font-family: "Courier New", Courier, monospace;
-  background: black;
+  background: url('https://media0.giphy.com/media/l3q2RgN7WUjeUUXm0/200w.webp?response_id=5921eeeda363e824407de8f8#18-grid3');
+  background-size: cover;
   height: 100%;
   color: #19ec99;
 }
@@ -47,4 +48,13 @@ h1 {
 section {
   max-width: 800px;
   margin: 0 auto;
+}
+
+#myForm{
+  display:inline-block;
+  margin-left: 70px;
+}
+#options{
+  margin-top:30px;
+  text-align: center;
 }
